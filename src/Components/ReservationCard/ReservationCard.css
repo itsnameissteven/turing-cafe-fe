@@ -1,7 +1,7 @@
 .reservation-card {
   display:flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   background-color: white;
   color: teal;
@@ -9,6 +9,7 @@
   border-radius:5px;
   width: 250px;
   height: 200px;
+  margin: 15px
 }
 
 .reservation-card__btn {
