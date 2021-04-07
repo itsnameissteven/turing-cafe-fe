@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Reservations from '../Reservations/Reservations'
 import Form from '../Form/Form'
-import { getReservations } from '../../APICalls/APICalls'
+import { getReservations, addNewReservation } from '../../APICalls/APICalls'
 import './App.css';
 
 class App extends Component {
@@ -19,7 +19,15 @@ class App extends Component {
   }
 
   addReservation = (reservation) => {
-    this.setState({ reservations: [...this.state.reservations, reservation] })
+    addNewReservation(reservation)
+      .then((response) => {
+        if(!response.ok) {
+          throw new Error(response.message)
+        }
+        this.setState({ reservations: [...this.state.reservations, reservation] })
+      })
+      .catch(err => alert(err))
+  
   }
 
   render() {

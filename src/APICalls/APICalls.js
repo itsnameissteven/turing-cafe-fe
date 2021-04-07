@@ -2,11 +2,13 @@ const url = 'http://localhost:3001/api/v1/reservations'
 
 export const getReservations = () =>  fetch(url).then(handleErrors)
 
-export const addNewReservations = () => {
-  fetch(url, {
-    method: 'POST',
-    headers: {}
-  }).then(handleErrors)
+export const addNewReservation = (reservation) => {
+  return fetch(url, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'}, 
+      body: JSON.stringify(reservation)
+    }
+  )
 }
 
 const handleErrors = (response) => {
