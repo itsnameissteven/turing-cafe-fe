@@ -16,38 +16,47 @@ class Form extends Component {
     this.setState({[event.target.name]: event.target.value})
   }
 
+  handleClick = (event) => {
+    event.preventDefault()
+    const newReservation = {
+      ...this.state,
+      id: Date.now()
+    }
+    this.props.addReservation(newReservation)
+  }
+
   render() {
     return (
-      <form>
+      <form className="form">
         <input
           type="text"
           placeholder="Name"
           name="name"
-          // value={}
-          // onChange={}
+          value={this.state.name}
+          onChange={this.handleChange}
         />
         <input
           type="text"
           placeholder="Date (mm/dd)"
           name="date"
-          // value={}
-          // onChange={}
+          value={this.state.date}
+          onChange={this.handleChange}
         />
         <input
           type="text"
           placeholder="Time"
           name="time"
-          // value={}
-          // onChange={}
+          value={this.state.time}
+          onChange={this.handleChange}
         />
         <input
           type="text"
           placeholder="Number of Guest"
           name="number"
-          // value={}
-          // onChange={}
+          value={this.state.number}
+          onChange={this.handleChange}
         />
-        <button>Make Reservation</button>
+        <button onClick={this.handleClick}>Make Reservation</button>
       </form>
     )
   }
