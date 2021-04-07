@@ -12,7 +12,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    getReservations().then(reservationData => this.setState({ reservations: reservationData }))
+    getReservations()
+      .then(reservationData => this.setState({ reservations: reservationData }))
+      .catch(err => alert(err))
   }
 
   render() {
@@ -22,7 +24,7 @@ class App extends Component {
         <div className='resy-form'>
 
         </div>
-        <Reservations />
+        <Reservations reservations={this.state.reservations} />
       </div>
     )
   }
