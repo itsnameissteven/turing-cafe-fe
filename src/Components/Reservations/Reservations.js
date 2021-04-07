@@ -14,7 +14,7 @@ const Reservations = ({ reservations }) => {
     )
   })
   return(
-    <div>
+    <div className="reservations">
       {reservationCards}
     </div>
   )

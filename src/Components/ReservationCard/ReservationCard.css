@@ -1,0 +1,19 @@
+.reservation-card {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  color: teal;
+  border: 4px solid teal;
+  border-radius:5px;
+  width: 250px;
+  height: 200px;
+}
+
+.reservation-card__btn {
+  background-color:teal;
+  color: white;
+  width: 80%;
+  border: 2px solid grey;
+}
