@@ -27,7 +27,6 @@ class App extends Component {
         this.setState({ reservations: [...this.state.reservations, reservation] })
       })
       .catch(err => alert(err))
-  
   }
 
   render() {

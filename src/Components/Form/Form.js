@@ -23,6 +23,16 @@ class Form extends Component {
       id: Date.now()
     }
     this.props.addReservation(newReservation)
+    this.clearInputs()
+  }
+
+  clearInputs = () => {
+    this.setState({
+      name: '',
+      date: '', 
+      time: '',
+      number: ''
+    })
   }
 
   render() {
